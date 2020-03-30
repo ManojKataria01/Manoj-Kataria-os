@@ -112,7 +112,7 @@ int main()
 	input_copy = input;
 	sort( input.begin(), input.end(), arrivalsort );
     
-    //my_check( input ); // To check the sort unomment it
+    my_check( input ); 
     total_exection_time = total_exection_time + input[0].A_time;
     for( i= 0 ;i< n; i++ )
     {
@@ -128,7 +128,7 @@ int main()
     	}
     }
 
-	int Ghant[total_exection_time]={0}; //Ghant Chart
+	int Ghant[total_exection_time]={0}; 
 	for( i= 0; i< total_exection_time; i++ )
 	{
 		Ghant[i]=-1;
@@ -145,7 +145,7 @@ int main()
 
 	for ( clock = 0; clock< total_exection_time; clock++ )
 	{
-		/*Insert the process with same Arrival time in Priority Queue*/
+		
 		for( int j = 0; j< n ; j++ )
 		{
 			if(clock == input[j].A_time)

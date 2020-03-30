@@ -5,14 +5,14 @@ using namespace std;
 struct Process_Data
 {
 	int Num;
-	int Pid;  //Process Id
-	int A_time; //Process Arrival Time
-	int B_time; //Process Bruest Time
-	int Priority; //Process Priority
-	int F_time; //Process Finish Time
-	int R_time; //Process Remaining  Time During Execution
-	int W_time; //Waiting Time
-	int S_time; //Process start Time
+	int Pid;  
+	int A_time;
+	int B_time; 
+	int Priority;
+	int F_time; 
+	int R_time; 
+	int W_time; 
+	int S_time; 
 	int Res_time;
 
 };
@@ -24,7 +24,7 @@ bool idsort(const P_d& x , const P_d& y)
 {
 	return x.Pid < y.Pid;
 }
-/* Sorting on the base of arrival time if that match then on Priority of Priority also  match than on the base of Process Id*/
+
 bool arrivalsort( const P_d& x ,const P_d& y)
 {
 	if(x.A_time < y.A_time)

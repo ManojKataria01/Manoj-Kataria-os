@@ -64,7 +64,7 @@ struct comPare
 	
 };
 
-/*To check the Input */
+
 void my_check(vector<P_d> mv)
 {
 	for(unsigned int i= 0; i < mv.size() ;i++)

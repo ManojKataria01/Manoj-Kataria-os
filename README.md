@@ -80,8 +80,8 @@ int main()
 	vector< P_d > input;
 	vector<P_d> input_copy;
 	P_d temp;
-	int pq_process = 0; // for PQ process
-	int rq_process = 0; // for RQ process
+	int pq_process = 0; 
+	int rq_process = 0; 
 	int A_time;
 	int B_time;
 	int Pid;

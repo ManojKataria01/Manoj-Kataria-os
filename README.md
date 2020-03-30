@@ -138,8 +138,8 @@ int main()
 	priority_queue < P_d ,vector<Process_Data> ,comPare> pq; //Priority Queue PQ
 
 	queue< P_d > rq; //Round Robin Queue RQ
-	int cpu_state = 0; //idle if 0 then Idle if 1 the Busy
-	int quantum = 4 ; //Time Quantum
+	int cpu_state = 0; 
+	int quantum = 2 ; 
 	current.Pid = -2;
 	current.Priority = 999999;
 
@@ -155,7 +155,7 @@ int main()
 		}
 		
 
-		if(cpu_state == 0) //If CPU idle
+		if(cpu_state == 0) 
 		{
 			if(!pq.empty())
 			{
@@ -174,19 +174,19 @@ int main()
 				quantum = 4;
 			}
 		}
-		else if(cpu_state == 1) //If cpu has any procss
+		else if(cpu_state == 1) 
 		{
 			if(pq_process == 1 && (!pq.empty()))
 			{
-				if(pq.top().Priority < current.Priority ) //If new process has high priority
+				if(pq.top().Priority < current.Priority )
 				{
-					rq.push(current); //push current in RQ
+					rq.push(current); 
 					current = pq.top();
 					pq.pop();
 					quantum = 4; 
 				}
 			}
-			else if(rq_process == 1 && (!pq.empty())) //If process is from RQ and new process come  in PQ
+			else if(rq_process == 1 && (!pq.empty())) 
 			{
 				rq.push(current);
 				current = pq.top();
@@ -200,12 +200,12 @@ int main()
 		}
 
 
-		if(current.Pid != -2) // Process Execution
+		if(current.Pid != -2) 
 		{
 			current.R_time--;
 			quantum--;
 			Ghant[clock] = current.Pid;
-			if(current.R_time == 0) //If process Finish
+			if(current.R_time == 0) 
 			{
 				cpu_state = 0 ;
 				quantum = 4 ;
@@ -214,7 +214,7 @@ int main()
 				rq_process = 0;
 				pq_process = 0;
 			}
-			else if(quantum == 0 ) //If time Qunatum of a current running process Finish
+			else if(quantum == 0 ) 
 			{
 				rq.push(current);
 				current.Pid = -2;
